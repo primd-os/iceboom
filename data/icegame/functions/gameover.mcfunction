@@ -1,7 +1,7 @@
-execute as @a[x=-30,y=55,z=-30,dx=60,dy=100,dz=60,gamemode=survival] run scoreboard players add @s igwins 1
-execute as @a[x=-30,y=55,z=-30,dx=60,dy=100,dz=60,gamemode=survival] run tellraw @p [{"text": "You need more than 1 person to play the game"}]
-execute as @a[x=0,gamemode=spectator] run title @a[x=0] title [{"selector": "@a[x=-30,y=55,z=-30,dx=60,dy=100,dz=60,gamemode=survival]"},{"text": " Wins!"}]
-gamemode spectator @a[x=-30,y=55,z=-30,dx=60,dy=100,dz=60,gamemode=survival]
+execute as @a[y=55,dy=100,gamemode=survival] run scoreboard players add @s igwins 1
+execute as @a[y=55,dy=100,gamemode=survival] run tellraw @s [{"text": "You need more than 1 person to play the game"}]
+execute as @a[x=0,gamemode=spectator] run title @a[x=0] title [{"selector": "@a[y=55,dy=100,gamemode=survival]"},{"text": " Wins!"}]
+gamemode spectator @a[y=55,dy=100,gamemode=survival]
 tp @a[x=0,gamemode=spectator] 50.5 92.5 0.5
 gamemode adventure @a[x=0,gamemode=spectator]
 scoreboard players set trash igout 0
