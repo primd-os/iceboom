@@ -1,6 +1,6 @@
 execute as @a[y=55,dy=100,gamemode=survival] run scoreboard players add @s igwins 1
-execute as @a[y=55,dy=100,gamemode=survival] run tellraw @s [{"text": "You need more than 1 person to play the game"}]
-execute as @a[x=0,gamemode=spectator] run title @a[x=0] title [{"selector": "@a[x=0,gamemode=survival]"},{"text": " Wins!"}]
+execute as @a[limit=1] at @s unless entity @a[distance=0.001..] run tellraw @s [{"text": "You need more than 1 person to play the game"}]
+execute if entity @a[x=0,gamemode=spectator] run title @a[x=0] title [{"selector": "@a[x=0,gamemode=survival]"},{"text": " Wins!"}]
 gamemode spectator @a[x=0,gamemode=survival]
 tp @a[x=0,gamemode=spectator] 50.5 92.5 0.5
 gamemode adventure @a[x=0,gamemode=spectator]
